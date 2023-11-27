@@ -1,8 +1,6 @@
 package com.example.devhomework15;
 
 public class Note {
-
-
     private long id;
 
     private String title;
