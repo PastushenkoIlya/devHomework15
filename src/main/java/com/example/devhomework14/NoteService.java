@@ -8,14 +8,14 @@ import java.util.List;
 @Service
 public class NoteService implements INoteService{
     List<Note> notesMap= new ArrayList<>();
-    long noteCounter = 0;
+    //long noteCounter = 0;
     @Override
     public List<Note> listAll(){
         return notesMap;
     }
 
     public Note add(Note note){
-        note.setId(++noteCounter);
+        //note.setId(++noteCounter);
         notesMap.add(note);
         return note;
     }
