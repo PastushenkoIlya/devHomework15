@@ -1,15 +1,7 @@
-package com.example.devhomework14;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+package com.example.devhomework15;
 
 public class Note {
 
-    @Id
 
     private long id;
 
