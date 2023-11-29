@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-us">
+<head>
+    <title>Edit note</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form method="post" th:object="${editedNote}">
+        <p th:field="*{id}" th:value="${param.id}">Note to be edited: ${param.id}</p>
+        <label for="titleEdit"></label>
+        <input id="titleEdit" th:type="text" th:field="*{title}">
+        <label for="contentEdit"></label>
+        <input id="contentEdit" th:type="text" th:field="*{content}">
+        <button th:type="submit" value="submit"></button><button type="reset" value="reset"></button>
+    </form>
+</body>
+</html>

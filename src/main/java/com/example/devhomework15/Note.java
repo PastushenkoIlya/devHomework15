@@ -30,4 +30,10 @@ public class Note {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public Note(long id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
 }
