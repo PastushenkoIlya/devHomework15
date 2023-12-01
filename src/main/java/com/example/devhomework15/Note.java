@@ -1,6 +1,8 @@
 package com.example.devhomework15;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
     private long id;
 
     private String title;

@@ -22,9 +22,12 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.0'
+    // https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5
+    implementation 'org.thymeleaf:thymeleaf-spring5:3.1.2.RELEASE'
+
     // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
     implementation 'org.springframework:spring-webmvc:6.1.0'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     implementation 'org.springframework.boot:spring-boot-starter-web:3.2.0'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     // https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
