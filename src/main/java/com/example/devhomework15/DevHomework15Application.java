@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DevHomework15Application {
-
     public static void main(String[] args) {
         SpringApplication.run(DevHomework15Application.class, args);
     }
-
 }
