@@ -5,8 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <form action="#" th:action="@{/edit}" method="post" th:object="${noteEdited}">
+    <form action="#" th:action="@{/note/edit}" method="post" th:object="${noteEdited}">
         <p>Note to be edited: <span th:text="${noteEdited.id}"></span></p>
+        <input th:field="*{id}" th:value="noteEdited.id" hidden="hidden">
         <label for="titleEdit"></label>
         <input id="titleEdit" type="text" th:field="*{title}" required>
         <label for="contentEdit"></label>

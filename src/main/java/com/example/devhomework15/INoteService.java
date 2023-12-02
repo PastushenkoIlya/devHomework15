@@ -1,11 +1,12 @@
 package com.example.devhomework15;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public interface INoteService {
-    List<Note> listAll();
-    Note add(Note note);
-    void deleteById(long id) throws Exception;
-    void update(Note note);
-    Note getById(long id) throws Exception;
+    List<NoteDto> listAll();
+    NoteDto add(NoteDto noteDto);
+    void deleteById(long id);
+    void update(NoteDto noteDto);
+    NoteDto getById(long id) throws NoSuchElementException;
 }

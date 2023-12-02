@@ -7,15 +7,15 @@
 <body>
     <table>
     <tr th:each="note : ${noteList}">
-        <td th:text="${note.id}"></td>
-        <td th:text="${note.title}"></td>
-        <td th:text="${note.content}"></td>
+        <td th:text="${note.getId()}"></td>
+        <td th:text="${note.getTitle()}"></td>
+        <td th:text="${note.getContent()}"></td>
         <td>
-            <form th:action="@{/note/edit?id=${note.id}}" method="GET">
-                <button type="submit" name="id" th:value="${note.id}">EDIT</button>
+            <form th:action="@{/note/edit?id=${note.getId()}}" method="GET">
+                <button type="submit" name="id" th:value="${note.getId()}">EDIT</button>
             </form>
             <form action="/note/delete" method="POST">
-                <button type="submit" th:name="id" th:value="${note.id}">DELETE</button>
+                <button type="submit" th:name="id" th:value="${note.getId()}">DELETE</button>
             </form>
         </td>
     </tr>

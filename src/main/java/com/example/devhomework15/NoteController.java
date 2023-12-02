@@ -1,5 +1,6 @@
 package com.example.devhomework15;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -8,13 +9,10 @@ import java.util.NoSuchElementException;
 
 @Controller
 @RequestMapping("/note")
+@RequiredArgsConstructor
 public class NoteController {
-    private static final NoteService noteService = new NoteService();
-    public NoteController() {
-        noteService.add(new Note(1,"To do list", "task task task"));
 
-        noteService.add(new Note(2,"Reminder", "do something important"));
-    }
+    private final NoteService noteService;
     @GetMapping("/list")
     public ModelAndView getNoteList(){
         ModelAndView result = new ModelAndView("noteTemplate");
@@ -23,27 +21,26 @@ public class NoteController {
     }
     @GetMapping("/edit")
     public ModelAndView edit(@RequestParam(name = "id") long id){
-        Note note;
+        NoteDto noteDto;
         try {
-            note = noteService.getById(id);
+            noteDto = noteService.getById(id);
         } catch (Exception e) {
             throw new NoSuchElementException();
         }
         ModelAndView result = new ModelAndView("editTemplate");
         result.addObject("id", id);
-        result.addObject("noteEdited", note);
-        result.addObject("formCompleted", true);
+        result.addObject("noteEdited", noteDto);
         return result;
     }
     @PostMapping(value = "/edit")
-    public ModelAndView edit(@ModelAttribute("note") Note note){
+    public ModelAndView edit(@ModelAttribute("note") NoteDto noteDto){
         //save changed fields
-        noteService.update(note);
+        noteService.update(noteDto);
         //redirect to the list of notes
         return getNoteList();
     }
     @PostMapping(value = "/delete")
-    public ModelAndView delete(@RequestParam(name = "deleteButton") Long id){
+    public ModelAndView delete(@RequestParam(name = "id") long id){
         try {
             noteService.deleteById(id);
         } catch (Exception e) {
@@ -56,4 +53,5 @@ public class NoteController {
         result.addObject("noteList", noteService.listAll());
         return result;
     }
+
 }
