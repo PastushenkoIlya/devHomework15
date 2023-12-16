@@ -2,14 +2,15 @@ package com.example.devhomework15;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NonNull;
 
 @Entity
 @Data
 @Table(name="note")
 public class Note{
-    protected Note(){}
+    public Note(){}
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String title;
